@@ -1,0 +1,538 @@
+.nftToken {
+  height: 250px;
+  width: 250px;
+}
+.type1 {
+  background: url('/images/typeTokens/1.png') no-repeat center center;
+  background-size: 150px;
+}
+.type2 {
+  background: url('/images/typeTokens/2.png') no-repeat center center;
+  background-size: 150px;
+}
+.type3 {
+  background: url('/images/typeTokens/3.png') no-repeat center center;
+  background-size: 150px;
+}
+.type4 {
+  background: url('/images/typeTokens/4.png') no-repeat center center;
+  background-size: 150px;
+}
+.type5 {
+  background: url('/images/typeTokens/5.png') no-repeat center center;
+  background-size: 150px;
+}
+.type6 {
+  background: url('/images/typeTokens/6.png') no-repeat center center;
+  background-size: 150px;
+}
+.type7 {
+  background: url('/images/typeTokens/7.png') no-repeat center center;
+  background-size: 150px;
+}
+.type8 {
+  background: url('/images/typeTokens/8.png') no-repeat center center;
+  background-size: 150px;
+}
+.type9 {
+  background: url('/images/typeTokens/9.png') no-repeat center center;
+  background-size: 150px;
+}
+.type10 {
+  background: url('/images/typeTokens/10.png') no-repeat center center;
+  background-size: 150px;
+}
+.type11 {
+  background: url('/images/typeTokens/11.png') no-repeat center center;
+  background-size: 150px;
+}
+.type12 {
+  background: url('/images/typeTokens/12.png') no-repeat center center;
+  background-size: 150px;
+}
+.type13 {
+  background: url('/images/typeTokens/13.png') no-repeat center center;
+  background-size: 150px;
+}
+.type14 {
+  background: url('/images/typeTokens/14.png') no-repeat center center;
+  background-size: 150px;
+}
+.type15 {
+  background: url('/images/typeTokens/15.png') no-repeat center center;
+  background-size: 150px;
+}
+.type16 {
+  background: url('/images/typeTokens/16.png') no-repeat center center;
+  background-size: 150px;
+}
+.type17 {
+  background: url('/images/typeTokens/17.png') no-repeat center center;
+  background-size: 150px;
+}
+.type18 {
+  background: url('/images/typeTokens/18.png') no-repeat center center;
+  background-size: 150px;
+}
+.type19 {
+  background: url('/images/typeTokens/19.png') no-repeat center center;
+  background-size: 150px;
+}
+.type20 {
+  background: url('/images/typeTokens/20.png') no-repeat center center;
+  background-size: 150px;
+}
+.type21 {
+  background: url('/images/typeTokens/21.png') no-repeat center center;
+  background-size: 150px;
+}
+.type22 {
+  background: url('/images/typeTokens/22.png') no-repeat center center;
+  background-size: 150px;
+}
+.type23 {
+  background: url('/images/typeTokens/23.png') no-repeat center center;
+  background-size: 150px;
+}
+.type24 {
+  background: url('/images/typeTokens/24.png') no-repeat center center;
+  background-size: 150px;
+}
+.type25 {
+  background: url('/images/typeTokens/25.png') no-repeat center center;
+  background-size: 150px;
+}
+.type26 {
+  background: url('/images/typeTokens/26.png') no-repeat center center;
+  background-size: 150px;
+}
+.type27 {
+  background: url('/images/typeTokens/27.png') no-repeat center center;
+  background-size: 150px;
+}
+.type28 {
+  background: url('/images/typeTokens/28.png') no-repeat center center;
+  background-size: 150px;
+}
+.type1000 {
+  background: url('/images/typeTokens/1000.png') no-repeat center center;
+  background-size: 150px;
+}
+.type1001 {
+  background: url('/images/typeTokens/1001.png') no-repeat center center;
+  background-size: 150px;
+}
+.type1002 {
+  background: url('/images/typeTokens/1002.png') no-repeat center center;
+  background-size: 150px;
+}
+.type1003 {
+  background: url('/images/typeTokens/1003.png') no-repeat center center;
+  background-size: 150px;
+}
+.type1004 {
+  background: url('/images/typeTokens/1004.png') no-repeat center center;
+  background-size: 150px;
+}
+.type1005 {
+  background: url('/images/typeTokens/1005.png') no-repeat center center;
+  background-size: 150px;
+}
+.type2000 {
+  background: url('/images/typeTokens/2000.png') no-repeat center center;
+  background-size: 150px;
+}
+.type2001 {
+  background: url('/images/typeTokens/2001.png') no-repeat center center;
+  background-size: 150px;
+}
+.nftTokenMiddle {
+  height: 120px;
+  width: 100px;
+}
+.middleType1 {
+  background: url('/images/typeTokens/1.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType2 {
+  background: url('/images/typeTokens/2.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType3 {
+  background: url('/images/typeTokens/3.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType4 {
+  background: url('/images/typeTokens/4.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType5 {
+  background: url('/images/typeTokens/5.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType6 {
+  background: url('/images/typeTokens/6.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType7 {
+  background: url('/images/typeTokens/7.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType8 {
+  background: url('/images/typeTokens/8.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType9 {
+  background: url('/images/typeTokens/9.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType10 {
+  background: url('/images/typeTokens/10.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType11 {
+  background: url('/images/typeTokens/11.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType12 {
+  background: url('/images/typeTokens/12.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType13 {
+  background: url('/images/typeTokens/13.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType14 {
+  background: url('/images/typeTokens/14.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType15 {
+  background: url('/images/typeTokens/15.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType16 {
+  background: url('/images/typeTokens/16.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType17 {
+  background: url('/images/typeTokens/17.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType18 {
+  background: url('/images/typeTokens/18.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType19 {
+  background: url('/images/typeTokens/19.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType20 {
+  background: url('/images/typeTokens/20.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType21 {
+  background: url('/images/typeTokens/21.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType22 {
+  background: url('/images/typeTokens/22.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType23 {
+  background: url('/images/typeTokens/23.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType24 {
+  background: url('/images/typeTokens/24.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType25 {
+  background: url('/images/typeTokens/25.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType26 {
+  background: url('/images/typeTokens/26.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType27 {
+  background: url('/images/typeTokens/27.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType28 {
+  background: url('/images/typeTokens/28.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType1000 {
+  background: url('/images/typeTokens/1000.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType1001 {
+  background: url('/images/typeTokens/1001.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType1002 {
+  background: url('/images/typeTokens/1002.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType1003 {
+  background: url('/images/typeTokens/1003.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType1004 {
+  background: url('/images/typeTokens/1004.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType1005 {
+  background: url('/images/typeTokens/1005.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType2000 {
+  background: url('/images/typeTokens/2000.png') no-repeat center center;
+  background-size: 70px;
+}
+.middleType2001 {
+  background: url('/images/typeTokens/2001.png') no-repeat center center;
+  background-size: 70px;
+}
+.nftTokenMin {
+  height: 40px;
+  width: 40px;
+}
+.minType1 {
+  background: url('/images/typeTokens/1.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType2 {
+  background: url('/images/typeTokens/2.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType3 {
+  background: url('/images/typeTokens/3.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType4 {
+  background: url('/images/typeTokens/4.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType5 {
+  background: url('/images/typeTokens/5.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType6 {
+  background: url('/images/typeTokens/6.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType7 {
+  background: url('/images/typeTokens/7.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType8 {
+  background: url('/images/typeTokens/8.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType9 {
+  background: url('/images/typeTokens/9.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType10 {
+  background: url('/images/typeTokens/10.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType11 {
+  background: url('/images/typeTokens/11.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType12 {
+  background: url('/images/typeTokens/12.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType13 {
+  background: url('/images/typeTokens/13.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType14 {
+  background: url('/images/typeTokens/14.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType15 {
+  background: url('/images/typeTokens/15.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType16 {
+  background: url('/images/typeTokens/16.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType17 {
+  background: url('/images/typeTokens/17.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType18 {
+  background: url('/images/typeTokens/18.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType19 {
+  background: url('/images/typeTokens/19.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType20 {
+  background: url('/images/typeTokens/20.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType21 {
+  background: url('/images/typeTokens/21.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType22 {
+  background: url('/images/typeTokens/22.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType23 {
+  background: url('/images/typeTokens/23.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType24 {
+  background: url('/images/typeTokens/24.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType25 {
+  background: url('/images/typeTokens/25.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType26 {
+  background: url('/images/typeTokens/26.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType27 {
+  background: url('/images/typeTokens/27.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType28 {
+  background: url('/images/typeTokens/28.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType1000 {
+  background: url('/images/typeTokens/1000.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType1001 {
+  background: url('/images/typeTokens/1001.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType1002 {
+  background: url('/images/typeTokens/1002.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType1003 {
+  background: url('/images/typeTokens/1003.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType1004 {
+  background: url('/images/typeTokens/1004.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType1005 {
+  background: url('/images/typeTokens/1005.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType2000 {
+  background: url('/images/typeTokens/2000.png') no-repeat center center;
+  background-size: 20px;
+}
+.minType2001 {
+  background: url('/images/typeTokens/2001.png') no-repeat center center;
+  background-size: 20px;
+}
+.avatarToken {
+  border-radius: 50%;
+  overflow: hidden;
+  background: #faf8eb;
+  color: #FFF;
+}
+.ownToken {
+  border: 1px solid #d5a3a3;
+  border-radius: 50%;
+}
+.buyToken {
+  border: 1px solid #478839;
+  border-radius: 50%;
+}
+.notValid {
+  background: #8080804d;
+}
+.expired {
+  background: tomato;
+  color: white;
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  padding: 5px 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: bold;
+}
+.powerDisplay {
+  cursor: pointer;
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  font-size: 22px;
+}
+.hexagon {
+  position: relative;
+  /*width: 2em;
+	height: 3.1em;*/
+  width: 35px;
+  height: 50px;
+  border-radius: 10px;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+.hexagon:before {
+  transform: rotate(60deg);
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: inherit;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.hexagon:after {
+  transform: rotate(-60deg);
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background: inherit;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.hexagonYellow {
+  background: linear-gradient(to bottom right, #ffeb3b 0%, #fbc02d 100%);
+  color: #ffb300;
+}
+.hexagonContent {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  z-index: 10;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+}

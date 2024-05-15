@@ -1,0 +1,31 @@
+.tableContainer {
+	overflow-x:auto;
+	max-width: 100%;
+	padding: 5px;
+	margin: 5px;
+}
+.tableHistory {
+	/*display: flex;
+	flex-direction: column;
+	flex: 1;
+	justify-content: space-between;*/
+	background: #6f6f6f;
+	padding: 5px;
+	border-radius: 10px;
+	color: black;
+}
+.tableColumn th {
+	border: 1px solid #bfbfbf;
+  background: #dbdbdb;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 5px;
+}
+.tableContent td {
+	border: 1px solid #bfbfbf;
+  background: #bfbfbf;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 5px;
+	overflow: hidden;
+}
