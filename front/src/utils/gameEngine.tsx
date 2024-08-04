@@ -41,7 +41,7 @@ export const profilesGame: ProfilesGameType = {
   'manager': {
     pocketSize: 14,
     typeCount: 2,
-    typeRandom: false,
+    typeRandom: true,
     questCount: 5,
     sell: {
       farmer: 50,
@@ -58,7 +58,7 @@ export const profilesGame: ProfilesGameType = {
   'cook': {
     pocketSize: 10,
     typeCount: 6,
-    typeRandom: false,
+    typeRandom: true,
     questCount: 5,
     sell: {
       farmer: 0,

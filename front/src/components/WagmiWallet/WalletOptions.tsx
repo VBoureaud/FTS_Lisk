@@ -2,15 +2,19 @@ import * as React from 'react'
 import { Connector, useConnect } from 'wagmi'
 
 export default function WalletOptions() {
-    const { connectors, connect } = useConnect()
+    const { connectors, connect } = useConnect();
 
-    return connectors.filter(connector => connector.id.indexOf('metamask') !== -1).slice(0, 1).map((connector) => (
+    return connectors && connectors.length > 0 ? connectors.filter(connector => connector.id.indexOf('metamask') !== -1).slice(0, 1).map((connector) => (
         <WalletOption
             key={connector.uid}
             connector={connector}
             onClick={() => connect({ connector })}
         />
-    ))
+    )) : <p style={{
+        background: 'gray',
+        padding: '10px',
+        borderRadius: '5px',
+    }}>Install Metamask to continue</p>
 }
 
 function WalletOption({
@@ -27,7 +31,7 @@ function WalletOption({
             const provider = await connector.getProvider()
             setReady(!!provider)
         })()
-    }, [connector])
+    }, [connector]);
 
     return (
         <button style={{

@@ -1,7 +1,7 @@
 // @ts-ignore
-import React, { useEffect, useState } from "react";
-import { buildRequest } from "../utils";
-import config, { apiServer } from "../config";
+import React, { useState } from "react";
+import { buildRequest } from "@/utils/index";
+import config, { apiServer } from "@/config/index";
 
 type TypeContext = {
 	loading: boolean;
@@ -10,6 +10,8 @@ type TypeContext = {
 	loadingUsers: boolean;
 	loadingCreate: boolean;
 	loadingMetaData: boolean;
+	errorServer: boolean;
+	simulationState: boolean;
 	address: string;
 	user: any | null;
 	users: any | null;
@@ -21,15 +23,19 @@ type TypeContext = {
 	getAllUsers: Function;
 	getCities: Function;
 	getMetaData: Function;
+	setDisconnected: Function;
+	updateSimulation: Function;
 };
 
-const Web2Context = React.createContext<TypeContext | null>({
+const Web2Context = React.createContext<TypeContext>({
 	loading: false,
 	loadingCities: false,
 	loadingUser: false,
 	loadingUsers: false,
 	loadingCreate: false,
 	loadingMetaData: false,
+	errorServer: false,
+	simulationState: true,
 	user: null,
 	users: null,
 	cities: null,
@@ -39,6 +45,8 @@ const Web2Context = React.createContext<TypeContext | null>({
 	getAllUsers: () => { },
 	getCities: () => { },
 	getMetaData: () => { },
+	setDisconnected: () => { },
+	updateSimulation: (sim: boolean) => { },
 });
 
 type Props = {
@@ -52,6 +60,8 @@ export const Web2ContextProvider = (props: Props) => {
 	const [loadingUser, setLoadingUser] = useState(false);
 	const [loadingUsers, setLoadingUsers] = useState(false);
 	const [loadingMetaData, setLoadingMetaData] = useState(false);
+	const [errorServer, setErrorServer] = useState(false);
+	const [simulationState, setSimulationState] = useState(true);
 
 	const [user, setUser] = useState<any | null>(null);
 	const [users, setUsers] = useState(null);
@@ -87,6 +97,8 @@ export const Web2ContextProvider = (props: Props) => {
 			setLoadingUser(false);
 		} catch (e) {
 			console.log({ e });
+			setLoadingUser(false);
+			setErrorServer(true);
 		}
 	}
 
@@ -131,6 +143,14 @@ export const Web2ContextProvider = (props: Props) => {
 		}
 	}
 
+	const setDisconnected = () => {
+		setUser(null);
+	}
+
+	const updateSimulation = (sim: boolean) => {
+		setSimulationState(sim)
+	}
+
 	return (
 		<Web2Context.Provider
 			value={{
@@ -140,6 +160,8 @@ export const Web2ContextProvider = (props: Props) => {
 				loadingUser,
 				loadingUsers,
 				loadingMetaData,
+				errorServer,
+				simulationState,
 				user,
 				users,
 				cities,
@@ -149,6 +171,8 @@ export const Web2ContextProvider = (props: Props) => {
 				getAllUsers,
 				getCities,
 				getMetaData,
+				setDisconnected,
+				updateSimulation,
 			}}>
 			{props.children}
 		</Web2Context.Provider>

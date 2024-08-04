@@ -20,7 +20,6 @@ import world110m from './assets/world110m.json';
 // handleClick
 // randomMarkerColor
 const WorldMap = (props) => {
-  console.log('worldMap');
   const initCenter = props.initCenter ? props.initCenter : [10, 10];
   const initZoom = 1;
   const [zoomCurrent, setZoomCurrent] = React.useState(initZoom);
@@ -51,7 +50,7 @@ const WorldMap = (props) => {
             //console.log(coordinates, zoom);
             setCenter(coordinates);
             setZoomCurrent(zoom);
-            if ((center && coordinates[0] != center[0] 
+            if ((center && coordinates[0] != center[0]
               || coordinates[1] != center[1])
               || (zoomCurrent != zoom)) {
               setCenter(coordinates);
@@ -60,7 +59,7 @@ const WorldMap = (props) => {
                 props.onZoomOrMove(coordinates, zoom);
             }
           }}
-          >
+        >
           <Geographies geography={world110m}>
             {({ geographies }) =>
               geographies.map(
@@ -115,7 +114,7 @@ const WorldMap = (props) => {
                 key={index}
                 coordinates={elt.coordinates}
                 onClick={() => props.handleClick ? props.handleClick(elt.name) : console.log(elt.name)}
-                >
+              >
                 {!props.circleMarker && <g
                   fill="none"
                   stroke="#FF5511"
@@ -145,7 +144,7 @@ const WorldMap = (props) => {
                   {elt.name}
                 </text>*/}
               </Marker>
-          ))}
+            ))}
           {props.lines && props.lines.map((l, index) => <Line
             key={index}
             from={l.start}
@@ -162,11 +161,11 @@ const WorldMap = (props) => {
             strokeWidth={1}
             strokeLinecap="round"
           />)}
-          {props.linesParents && props.linesParents.map((l, index) => 
+          {props.linesParents && props.linesParents.map((l, index) =>
             <Marker
               key={"market_parents" + index}
               coordinates={l.start}
-              >
+            >
               {!props.circleMarker && <g
                 fill="none"
                 stroke="#4cfb3d"

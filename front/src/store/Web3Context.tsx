@@ -5,8 +5,8 @@ import NFT_TTS from '@/contracts/NFT_TTS.json';
 import Trade_TTS from '@/contracts/Trade_TTS.json';
 import ERC20 from '@/contracts/ERC20.json';
 
-import config from "../config";
-import { publicClient, walletClient } from "../config/wagmiConfig";
+import config from "@/config/index";
+import { publicClient, walletClient, liskSepolia } from "@/config/wagmiConfig";
 import { fromHex } from "viem";
 
 const Web3Context = React.createContext({
@@ -16,25 +16,29 @@ const Web3Context = React.createContext({
   loadingMint: false,
   loadingBurn: false,
   loadingTrades: false,
+  loadingSwitch: false,
   transactions: null,
   trades: null,
-  getTransaction: (address: string) => { },
+  nfts: null,
+  getTransaction: (address: `0x${string}`) => { },
   getNfts: () => { },
   getTrades: () => { },
-  openTrade: (address: string, idToken: number, price: number) => { },
-  approveTrade: (address: string, price: number) => { },
-  executeTrade: (address: string, idTrace: number, value: number) => { },
-  cancelTrade: (address: string, id: number) => { },
-  actionMint: (address: string, typeToken: string) => { },
-  actionBurn: (address: string, typeToken: string) => { },
+  openTrade: (address: `0x${string}`, idToken: number, price: number) => { },
+  approveTrade: (address: `0x${string}`, price: number) => { },
+  executeTrade: (address: `0x${string}`, idTrace: number, value: number) => { },
+  cancelTrade: (address: `0x${string}`, id: number) => { },
+  actionMint: (address: `0x${string}`, typeToken: string) => { },
+  actionBurn: (address: `0x${string}`, typeToken: string) => { },
+  switchChain: () => { },
+  isGoodChain: (idChain: number | undefined): boolean => { },
 });
 
 type Props = {
-
+  children: React.ReactNode;
 };
 
 const apiBlockScout = {
-  transactionsAddr: (address: string) => `https://sepolia-blockscout.lisk.com/api/v2/addresses/${address}/transactions?filter=to%20%7C%20from`,
+  transactionsAddr: (address: `0x${string}`) => `https://sepolia-blockscout.lisk.com/api/v2/addresses/${address}/transactions?filter=to%20%7C%20from`,
   nftList: (address: string) => `https://sepolia-blockscout.lisk.com/api/v2/tokens/${address}/instances`,
 }
 
@@ -53,6 +57,7 @@ export const Web3ContextProvider = (props: Props) => {
   const [loadingMint, setLoadingMint] = useState(false);
   const [loadingBurn, setLoadingBurn] = useState(false);
   const [loadingTrades, setLoadingTrades] = useState(false);
+  const [loadingSwitch, setLoadingSwitch] = useState(false);
   const [transactions, setTransactions] = useState(null);
   const [trades, setTrades] = useState(null);
   const [nfts, setNfts] = useState(null);
@@ -100,7 +105,7 @@ export const Web3ContextProvider = (props: Props) => {
     };
   }, []);
 
-  const getTransaction = async (address: string) => {
+  const getTransaction = async (address: `0x${string}`) => {
     console.log('getTransaction');
     try {
       setLoadingTx(true);
@@ -133,7 +138,7 @@ export const Web3ContextProvider = (props: Props) => {
     }
   }
 
-  const actionMint = async (address: string, typeToken: string) => {
+  const actionMint = async (address: `0x${string}`, typeToken: string) => {
     try {
       setLoadingMint(true);
       const marketplace = config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR;
@@ -155,13 +160,13 @@ export const Web3ContextProvider = (props: Props) => {
     }
   }
 
-  const actionBurn = async (address: string, typeToken: string) => {
+  const actionBurn = async (address: `0x${string}`, typeToken: string) => {
     try {
       setLoadingBurn(true);
       console.log({ address, typeToken });
       const { request } = await publicClient.simulateContract({
         account: address,
-        address: config.LISKSEPOLIA.CONTRACT_NFT_ADDR,
+        address: config.LISKSEPOLIA.CONTRACT_NFT_ADDR as `0x${string}`,
         abi: NFT_TTS.abi,
         functionName: 'burn',
         args: [typeToken, marketplace],
@@ -181,17 +186,17 @@ export const Web3ContextProvider = (props: Props) => {
       console.log('getTrades');
       setLoadingTrades(true);
       const tradeCounter = await publicClient.readContract({
-        address: config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR,
+        address: config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR as `0x${string}`,
         abi: Trade_TTS.abi,
         functionName: 'tradeCounter',
       })
-      const count = parseInt(tradeCounter);
+      const count = parseInt(tradeCounter + "");
       console.log({ count });
       if (count) {
         const newTrades = [];
-        for (let i = 0; i < count; i++) {
+        for (let i = count - 1; i >= 0; i--) {
           const trade = await publicClient.readContract({
-            address: config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR,
+            address: config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR as `0x${string}`,
             abi: Trade_TTS.abi,
             functionName: 'getTrade',
             args: [i],
@@ -213,13 +218,13 @@ export const Web3ContextProvider = (props: Props) => {
   }
 
   // Approve & Open
-  const openTrade = async (address: string, idToken: number, price: number) => {
+  const openTrade = async (address: `0x${string}`, idToken: number, price: number) => {
     try {
       console.log('openTrade');
       setLoadingTrades(true);
       const { request } = await publicClient.simulateContract({
         account: address,
-        address: config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR,
+        address: config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR as `0x${string}`,
         abi: Trade_TTS.abi,
         functionName: 'openTrade',
         args: [idToken, price],
@@ -251,13 +256,13 @@ export const Web3ContextProvider = (props: Props) => {
     }
   }
 
-  const approveTrade = async (address: string, price: number) => {
+  const approveTrade = async (address: `0x${string}`, price: number) => {
     try {
       console.log('approveTrade');
       setLoadingTrades(true);
       const { request } = await publicClient.simulateContract({
         account: address,
-        address: config.LISKSEPOLIA.CONTRACT_NATIVE_COIN,
+        address: config.LISKSEPOLIA.CONTRACT_NATIVE_COIN as `0x${string}`,
         abi: ERC20.abi,
         functionName: 'approve',
         args: [config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR, price],
@@ -275,17 +280,17 @@ export const Web3ContextProvider = (props: Props) => {
     }
   }
 
-  const executeTrade = async (address: string, idTrace: number, value: number) => {
+  const executeTrade = async (address: `0x${string}`, idTrace: number, value: number) => {
     try {
       console.log('executeTrade', address, idTrace, value);
       setLoadingTrades(true);
       const { request } = await publicClient.simulateContract({
         account: address,
-        address: config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR,
+        address: config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR as `0x${string}`,
         abi: Trade_TTS.abi,
         functionName: 'executeTrade',
         args: [idTrace],
-        value,
+        value: value,
       });
       const write = await walletClient.writeContract(request);
     } catch (e) {
@@ -295,13 +300,13 @@ export const Web3ContextProvider = (props: Props) => {
     }
   }
 
-  const cancelTrade = async (address: string, id: number) => {
+  const cancelTrade = async (address: `0x${string}`, id: number) => {
     try {
       console.log('cancelTrade');
       setLoadingTrades(true);
       const { request } = await publicClient.simulateContract({
         account: address,
-        address: config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR,
+        address: config.LISKSEPOLIA.CONTRACT_TRADE_TTS_ADDR as `0x${string}`,
         abi: Trade_TTS.abi,
         functionName: 'cancelTrade',
         args: [id],
@@ -314,6 +319,25 @@ export const Web3ContextProvider = (props: Props) => {
     }
   }
 
+  const switchChain = async () => {
+    try {
+      console.log('switchChain', liskSepolia.id);
+      if (walletClient && !loadingSwitch) {
+        setLoadingSwitch(true);
+        await walletClient.switchChain({ id: liskSepolia.id });
+      }
+    } catch (e) {
+      console.log(e);
+    }
+    setLoadingSwitch(false);
+  }
+
+  const isGoodChain = (idChain: number | undefined) => {
+    if (idChain === undefined) return false;
+    const liskId = liskSepolia.id;
+    return idChain === liskId;
+  }
+
   return (
     <Web3Context.Provider
       value={{
@@ -323,6 +347,7 @@ export const Web3ContextProvider = (props: Props) => {
         loadingMint,
         loadingBurn,
         loadingTrades,
+        loadingSwitch,
         transactions,
         getTransaction,
         nfts,
@@ -335,6 +360,8 @@ export const Web3ContextProvider = (props: Props) => {
         approveTrade,
         executeTrade,
         cancelTrade,
+        switchChain,
+        isGoodChain,
       }}>
       {props.children}
     </Web3Context.Provider>

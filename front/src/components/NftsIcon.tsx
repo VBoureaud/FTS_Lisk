@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { 
-	decodeHashURI,
+import {
 	unPad,
 	displayDate,
 } from "@/utils";
@@ -27,11 +26,11 @@ type NftsIconProps = {
 	nftTokenName: string;
 	//uris?: Uri[];
 	user?: string;
-	tokenType?: string;
+	tokenType: string;
 	tokenDate?: string | Date;
 	tokenIssuer?: string;
 	tokenOwner?: string;
-	names?: {[key: string]: string};
+	names?: { [key: string]: string };
 	validity?: boolean;
 	sizeCss: string;
 };
@@ -39,18 +38,18 @@ type NftsIconProps = {
 const capitalize = (str: string) =>
 	str.charAt(0).toUpperCase() + str.slice(1);
 
-export const NftsIcon : React.FunctionComponent<NftsIconProps> = (props) => {
-	const author = props.user && props.tokenIssuer && props.user === props.tokenIssuer 
-		? 'you' 
-		: props.tokenIssuer && props.names && props.names[props.tokenIssuer] 
-		? props.names[props.tokenIssuer] 
-		: props.tokenIssuer;
+export const NftsIcon: React.FunctionComponent<NftsIconProps> = (props) => {
+	const author = props.user && props.tokenIssuer && props.user === props.tokenIssuer
+		? 'you'
+		: props.tokenIssuer && props.names && props.names[props.tokenIssuer]
+			? props.names[props.tokenIssuer]
+			: props.tokenIssuer;
 	const image = props.tokenType.split('#')[0];
-	let child = 
+	let child =
 		<Tooltip title={props.tokenType && nameTypeToken[image] ? capitalize(nameTypeToken[image].name) + (author ? ' by ' + author : '') : 'Empty'} placement="bottom-start">
 			<div className={`${props.validity ? "avatarToken" : "avatarToken notValid"} ${author != 'you' && props.tokenType ? " buyToken" : " ownToken"}`}>
-				<Box 
-					style={{ 
+				<Box
+					style={{
 						margin: 'auto',
 						filter: translateImageSpecsToCss(props.tokenType),
 						WebkitFilter: translateImageSpecsToCss(props.tokenType),
@@ -61,16 +60,16 @@ export const NftsIcon : React.FunctionComponent<NftsIconProps> = (props) => {
 						//-o-filter: translateImageSpecsToCss(props.tokenType),
 						//-ms-filter: translateImageSpecsToCss(props.tokenType),
 					}}
-					className={props.sizeCss + unPad(image) }
+					className={props.sizeCss + unPad(image)}
 				></Box>
-		  </div>
+			</div>
 		</Tooltip>;
 
 	return (
-			<>
-				{child}
-			</>
-  );
+		<>
+			{child}
+		</>
+	);
 }
 
 export default NftsIcon;

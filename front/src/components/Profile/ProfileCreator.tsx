@@ -15,7 +15,6 @@ import WorldMap from "@/components/WorldMap";
 import LocationFieldSet from "@/components/LocationFieldSet";
 
 // Faq
-import { FaqModal } from "@/components/Faq";
 import BasicModal from "@/components/Modal";
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
@@ -294,13 +293,6 @@ export const ProfileCreator = (props: ProfileCreatorProps) => {
 				</React.Fragment>
 			) : (
 				<React.Fragment>
-					{helpBox && helpBox.length > 0 &&
-						<FaqModal
-							shouldInclude={helpBox}
-							openDelay={0}
-							onClose={() => setHelpBox([])}
-						/>}
-
 					{activeStep === 0 &&
 						<Container
 							maxWidth="xl"

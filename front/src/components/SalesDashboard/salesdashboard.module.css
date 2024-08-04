@@ -1,0 +1,26 @@
+.container {
+	background: #00000042;
+	padding: 20px;
+	box-sizing: border-box;
+	borderRadius: 15px;
+	margin: 5px;
+}
+.mainContainer {
+	display: flex;
+	flex-wrap: wrap;
+}
+.separator {
+	display: block;
+	margin: 10px;
+}
+.priceBig {
+	font-size: 28px;
+}
+.priceSmallDown {
+	font-size: 15px;
+	color: tomato;
+}
+.priceSmallUp {
+	font-size: 15px;
+	color: #1eed00;
+}

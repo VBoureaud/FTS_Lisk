@@ -1,0 +1,118 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.mainTitle {
+  text-align: center;
+  padding-top: 20px;
+  letter-spacing: 2px;
+  color: #e74c3c;
+  background: #222;
+}
+
+.flexManifest>div {
+  flex: 1;
+  padding: 15px;
+}
+
+.flexManifest {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.manifest>div {
+  background: white;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.manifest>h3 {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.nftBlock {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 20px;
+}
+
+.nftBlock>div {
+  flex: 1;
+}
+
+.joinBtn {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.addBtn {
+  background: #faf8eb;
+  color: black;
+  font-size: 50px;
+  padding: 30px 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.itemBox {
+  background: #222;
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.itemBox>.description {
+  margin-left: 15px;
+  line-height: 25px;
+  flex: 1;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .content {
+    padding: 4rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    margin-bottom: 120px;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .main {
+    padding: 2rem;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}

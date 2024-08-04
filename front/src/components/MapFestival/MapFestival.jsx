@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useRef, useEffect, useState } from 'react';
 import { config, Map, MapOptions, MapStyle, Popup } from '@maptiler/sdk';
 import "@maptiler/sdk/dist/maptiler-sdk.css";

@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 type Props = {};
 
 const Footer = (props: Props) => {
@@ -18,13 +18,7 @@ const Footer = (props: Props) => {
         <strong>Contact</strong>
         <div style={{ display: "flex", gap: "0.75rem" }}>
           <a href="mailto:team@poc.fr" target={"_blank"}>
-            <Image
-              src="/email-symbol-icon.svg"
-              alt="Envelope logo"
-              width={32}
-              height={32}
-              priority
-            />
+            Mail
           </a>
         </div>
       </div>

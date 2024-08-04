@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef } from "react";
 import {
     useAccount,
@@ -7,7 +5,11 @@ import {
 } from 'wagmi'
 import WalletOptions from './WalletOptions';
 
-export const ConnectWallet = () => {
+type Props = {
+    onDisconnect: Function;
+};
+
+export const ConnectWallet = (props: Props) => {
     const { isConnecting, isConnected } = useAccount();
     const { disconnect } = useDisconnect();
 
@@ -19,7 +21,10 @@ export const ConnectWallet = () => {
                         cursor: 'pointer',
                         padding: '5px'
                     }}
-                    onClick={() => disconnect()}
+                    onClick={() => { 
+                        disconnect();
+                        props.onDisconnect();
+                    }}
                 >Disconnect</button>
             </div>
         );

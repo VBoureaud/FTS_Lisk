@@ -1,9 +1,7 @@
-'use client';
-
-import { 
-	createConfig,
-	cookieStorage,
-	createStorage
+import {
+  createConfig,
+  cookieStorage,
+  createStorage
 } from 'wagmi'
 import { defineChain, createPublicClient, http, createWalletClient, custom } from 'viem'
 
@@ -50,7 +48,7 @@ export const publicClient = createPublicClient({
 })
 
 // to move to web3 ?
-export const walletClient = process.browser ? createWalletClient({
+export const walletClient = createWalletClient({
   chain: liskSepolia,
-  transport: custom(window.ethereum)
-}) : null;
+  transport: window.ethereum ? custom(window.ethereum) : http()
+});
