@@ -8,6 +8,7 @@ export default defineConfig({
   server: {
     port: 3006,
   },
+  base: '/foodtrust_simulator/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src/"),

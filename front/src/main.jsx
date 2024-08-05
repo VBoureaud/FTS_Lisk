@@ -15,30 +15,29 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/foodtrust_simulator/",
     element: <Home />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/addItem",
+    path: "/foodtrust_simulator/addItem",
     element: <AddItem />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/market",
+    path: "/foodtrust_simulator/market",
     element: <Market />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/account",
+    path: "/foodtrust_simulator/account",
     element: <Account />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/nfts/:nftId",
+    path: "/foodtrust_simulator/nfts/:nftId",
     element: <Nfts />,
     errorElement: <ErrorPage />,
   }

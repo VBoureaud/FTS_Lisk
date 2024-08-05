@@ -77,7 +77,7 @@ const MarketPage = (props: Props) => {
             return (
               <div key={index} className={styles.tradeBlock}>
                 <div style={{ maxWidth: '150px' }}>
-                  <Link to={`/nfts/${infoToken.name}`}>
+                  <Link to={config.subDomain + `/nfts/${infoToken.name}`}>
                     <NftsIcon
                       nftTokenName={infoToken.name ? nameTypeToken[infoToken.name.slice(-3)].name : ''}
                       user={infoToken.owner.hash}

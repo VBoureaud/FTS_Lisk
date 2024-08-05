@@ -8,6 +8,7 @@ import Web2Context from "@/store/Web2Context";
 import { parseEther } from 'viem';
 import Navigation from "@/components/Navigation/Navigation";
 import ListInvest from "@/components/ListInvest";
+import config from "@/config";
 
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -129,7 +130,7 @@ export default function Home() {
       <div style={{ maxWidth: '768px', padding: '30px', margin: 'auto', marginTop: '40px' }}>
         {!user && <h1>Welcome !</h1>}
         {user && user.name && <h1>Hello {user.name} !</h1>}
-        {!loadingUser && !user && address && <h3>New in the game ? <Link to={"/account"}><button className={styles.joinBtn}>Join here</button></Link></h3>}
+        {!loadingUser && !user && address && <h3>New in the game ? <Link to={config.subDomain + "/account"}><button className={styles.joinBtn}>Join here</button></Link></h3>}
         {loadingUser && <h6>Loading...</h6>}
         <h3 style={{ fontWeight: 'normal', margin: '15px' }}>Food Trust & Simulator is a platform offering two tools, a simulation-based interface to better understand the concept of blockchain which introduce the second: a solution to help farmers tokenize their crops.</h3>
         {!address && <>
@@ -177,7 +178,7 @@ export default function Home() {
             && nfts.items.filter((elt: any) => elt.owner.hash == address).map((elt: any, index: number) =>
               <div key={index} className={styles.nftBlock}>
                 <div style={{ maxWidth: '150px' }}>
-                  <Link to={`/nfts/${elt.id}`}>
+                  <Link to={config.subDomain + `/nfts/${elt.id}`}>
                     <NftsIcon
                       nftTokenName={elt.id ? nameTypeToken[elt.id.slice(-3)].name : ''}
                       user={elt.owner.hash}
@@ -291,7 +292,7 @@ export default function Home() {
                 </Carousel>
               </div>
               <div style={{ flex: 1, paddingTop: '35px', maxWidth: '150px', margin: '5px' }}>
-                <Link to={"/addItem"}><div className={styles.addBtn}>+</div></Link>
+                <Link to={config.subDomain + "/addItem"}><div className={styles.addBtn}>+</div></Link>
               </div>
             </div>
 

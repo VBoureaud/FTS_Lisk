@@ -6,6 +6,7 @@ import { ConnectWallet } from "@/components/WagmiWallet/ConnectWallet";
 import {
   useAccount,
 } from 'wagmi';
+import config from "@/config";
 
 type Props = {
 };
@@ -17,9 +18,9 @@ enum Route {
 }
 
 const routes = {
-  [Route.HOME]: "/",
-  [Route.MARKET]: "/market",
-  [Route.ACCOUNT]: "/account",
+  [Route.HOME]: config.subDomain + "/",
+  [Route.MARKET]: config.subDomain + "/market",
+  [Route.ACCOUNT]: config.subDomain + "/account",
 };
 
 const Navigation = (props: Props) => {

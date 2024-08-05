@@ -1,5 +1,7 @@
 const config = {
-  "api": "http://127.0.0.1:3002/v1",
+  "subDomain": "/foodtrust_simulator",
+  //"api": "http://127.0.0.1:3002/v1",
+  "api": "https://fts-next.vercel.app/v1",
   "version": "0.1.0",
   "LISKSEPOLIA": {
     "CHAIN_ID": 4202,
